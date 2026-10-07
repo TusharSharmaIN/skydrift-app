@@ -1,0 +1,35 @@
+name: feature
+description: Generates a feature module following Clean Architecture with Bloc + Freezed.
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.52 <1.0.0"
+
+vars:
+  feature_name:
+    type: string
+    description: The feature name in snake_case (e.g. wallet, catalog)
+    prompt: "What is the feature name? (snake_case)"
+
+  include_local_data_source:
+    type: boolean
+    description: Include a local data source stub
+    default: true
+    prompt: "Include local data source?"
+
+  include_tests:
+    type: boolean
+    description: Include test boilerplate
+    default: true
+    prompt: "Include test boilerplate?"
+
+  include_page:
+    type: boolean
+    description: Include presentation page
+    default: true
+    prompt: "Include presentation page?"
+
+  include_bloc:
+    type: boolean
+    description: Include Bloc / Event / State (Freezed)
+    default: true
+    prompt: "Include Bloc?"

@@ -1,0 +1,5 @@
+#include "Release.xcconfig"
+FLUTTER_FLAVOR=dev
+PRODUCT_BUNDLE_IDENTIFIER=com.tusharsharmain.skydrift.dev
+FLAVOR_APP_NAME=Sky Drift Dev
+FLUTTER_TARGET=lib/main_dev.dart

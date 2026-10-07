@@ -1,0 +1,37 @@
+# Flutter Bricks Template — project rules
+
+## Architecture
+
+- **Pattern**: **Feature-first Clean Architecture** under `lib/features/<feature>/`:
+  - **`domain/`** — Pure Dart. Entities (`*.dart` + Freezed), repository contracts `i_<feature>_repository.dart` returning `Either<ApiFailure, T>` from `dartz`.
+  - **`application/`** — Bloc: `<feature>_bloc.dart`, `<feature>_event.dart`, `<feature>_state.dart`, Freezed `part` files.
+  - **`infrastructure/`** — DTOs (`*_dto.dart`), Retrofit APIs (`infrastructure/core/*_api.dart`), data sources, repository implementations registered with injectable.
+  - **`presentation/`** — Flutter UI: `page/` for routes (`*_page.dart` only, never `*_screen.dart`), `widgets/` by flow. Do not import `infrastructure/`.
+- **Shared code**: `lib/core/`. Styling: `lib/theme/`.
+- **DI**: GetIt `locator` in `lib/di/injection.dart` via injectable. Do not register the same type by hand in multiple places.
+- **Routing**: go_router in `lib/routes/`. Typed routes in `typed_routes.dart`.
+- **Flavors**: `lib/main_dev.dart` and `lib/main_prod.dart` call `bootstrap()` then `App`. Use `FlavorConfig`.
+
+## State
+
+- Global blocs (when added) live in `App` via `MultiBlocProvider` + `locator.get`.
+- Widgets: `context.read` to dispatch; `BlocBuilder` / `BlocListener` with `buildWhen` / `listenWhen`.
+- No Riverpod, Provider, or GetX.
+
+## Naming
+
+- Files: `snake_case.dart`. Pages: `*_page.dart`. Bloc: `*_bloc.dart`. DTOs: `*_dto.dart`.
+- Repository interface: `abstract class I…Repository`. Implementation: `class …Repository implements I…`.
+- Copy: `StringsConstant`. Assets: `Assets`. SVG widgets: `AppIcons`.
+
+## Style
+
+- `analysis_options.yaml`: single quotes, const constructors, `always_declare_return_types`.
+- After async gaps, check `context.mounted`.
+- Responsive: `ScreenUtils` / `.h` `.w` `.sp` `.sq`.
+- Typography: `AppTextStyle.font{size}{weight}Inter` or `PlusJakartaSans`.
+- Theme: Material 3 `ThemeData` + `BaseColors`. Do not hardcode Corp Cash purple.
+
+## Codegen
+
+Never edit `*.g.dart`, `*.freezed.dart`, `injection.config.dart`. Run `make build_runner`.
