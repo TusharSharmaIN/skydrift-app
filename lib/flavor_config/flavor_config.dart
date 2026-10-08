@@ -42,19 +42,10 @@ class FlavorConfig {
     };
   }
 
-  /// Deployed API, including `/api`. Paste the real host here.
-  static const String prodApiUrl = '';
-
-  /// Optional full override, including `/api`.
-  /// `flutter run --dart-define=API_BASE_URL=https://host/api`
-  static const String _apiBaseUrlOverride = String.fromEnvironment(
-    'API_BASE_URL',
-  );
+  /// Deployed API, including `/api`.
+  static const String prodApiUrl = 'https://skydrift-backend.onrender.com/api';
 
   static String _baseUrl(AppFlavor flavor) {
-    if (_apiBaseUrlOverride.isNotEmpty) {
-      return _apiBaseUrlOverride;
-    }
     return switch (flavor) {
       AppFlavor.dev => _localApiUrl(),
       AppFlavor.prod => prodApiUrl,
