@@ -10,6 +10,9 @@ pub_get:
 build_runner:
 	@fvm dart run build_runner build --delete-conflicting-outputs
 
+clean_ios:
+	@cd ios && rm -rf Podfile.lock Pods .symlinks && cd .. && fvm flutter clean && fvm flutter pub get && fvm flutter precache --ios && cd ios && pod install && cd ..
+
 analyze:
 	@fvm flutter analyze --fatal-infos --fatal-warnings
 
