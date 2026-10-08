@@ -68,5 +68,16 @@
 		</array>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSCameraUsageDescription</key>
+		<string>SkyDrift needs camera access to capture and analyze clouds.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>SkyDrift needs photo library access to pick a sky photo.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Required for camera session initialization.</string>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsLocalNetworking</key>
+			<true/>
+		</dict>
 	</dict>
 </plist>

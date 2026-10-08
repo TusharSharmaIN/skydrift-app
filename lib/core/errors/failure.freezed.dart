@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'failure.dart';
@@ -9,6 +9,7 @@ part of 'failure.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -25,16 +26,21 @@ $FailureCopyWith<Failure> get copyWith => _$FailureCopyWithImpl<Failure>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Failure&&(identical(other.message, message) || other.message == message)&&const DeepCollectionEquality().equals(other.arguments, arguments));
+  final _this = this as Failure;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Failure&&(identical(other.message, _this.message) || other.message == _this.message)&&const DeepCollectionEquality().equals(other.arguments, _this.arguments));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message,const DeepCollectionEquality().hash(arguments));
+int get hashCode {
+  final _this = this as Failure;
+  return Object.hash(runtimeType,_this.message,const DeepCollectionEquality().hash(_this.arguments));
+}
 
 @override
 String toString() {
-  return 'Failure(message: $message, arguments: $arguments)';
+  final _this = this as Failure;
+  return 'Failure(message: ${_this.message}, arguments: ${_this.arguments})';
 }
 
 
@@ -63,8 +69,8 @@ class _$FailureCopyWithImpl<$Res>
 /// Create a copy of Failure
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? message = null,Object? arguments = null,}) {
-  return _then(_self.copyWith(
-message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+  return _then(Failure(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,arguments: null == arguments ? _self.arguments : arguments // ignore: cast_nullable_to_non_nullable
 as Map<String, String>,
   ));
@@ -207,7 +213,7 @@ return $default(_that.message,_that.arguments);case _:
 
 
 class _Failure extends Failure {
-  const _Failure(this.message, {final  Map<String, String> arguments = const <String, String>{}}): _arguments = arguments,super._();
+  const _Failure(this.message, { Map<String, String> arguments = const <String, String>{}}): _arguments = arguments,super._();
   
 
 @override final  String message;
@@ -229,16 +235,18 @@ _$FailureCopyWith<_Failure> get copyWith => __$FailureCopyWithImpl<_Failure>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failure&&(identical(other.message, message) || other.message == message)&&const DeepCollectionEquality().equals(other._arguments, _arguments));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failure&&(identical(other.message, message) || other.message == message)&&const DeepCollectionEquality().equals(other.arguments, _arguments));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message,const DeepCollectionEquality().hash(_arguments));
+int get hashCode {
+    return Object.hash(runtimeType,message,const DeepCollectionEquality().hash(_arguments));
+}
 
 @override
 String toString() {
-  return 'Failure(message: $message, arguments: $arguments)';
+    return 'Failure(message: $message, arguments: $arguments)';
 }
 
 

@@ -1,7 +1,7 @@
 import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:skydrift/features/splash/presentation/page/splash_page.dart';
+import 'package:skydrift/features/splash/presentation/page/splash/splash_page.dart';
 import 'package:skydrift/routes/app_routes.dart';
 import 'package:skydrift/routes/typed_routes.dart';
 

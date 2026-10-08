@@ -24,8 +24,8 @@ class HttpService {
       BaseOptions(
         baseUrl: config.baseUrl,
         connectTimeout: const Duration(seconds: 30),
-        receiveTimeout: const Duration(seconds: 30),
-        sendTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 120),
+        sendTimeout: const Duration(seconds: 120),
       ),
     );
     _dio.interceptors.addAll(interceptors);

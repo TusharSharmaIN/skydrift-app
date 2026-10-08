@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'api_failures.dart';
@@ -9,6 +9,7 @@ part of 'api_failures.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -20,7 +21,7 @@ mixin _$ApiFailure {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiFailure);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiFailure);
 }
 
 
@@ -29,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ApiFailure()';
+    return 'ApiFailure()';
 }
 
 
@@ -238,16 +239,18 @@ _$OtherCopyWith<_Other> get copyWith => __$OtherCopyWithImpl<_Other>(this, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Other&&(identical(other.message, message) || other.message == message));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Other&&(identical(other.message, message) || other.message == message));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode {
+    return Object.hash(runtimeType,message);
+}
 
 @override
 String toString() {
-  return 'ApiFailure.other(message: $message)';
+    return 'ApiFailure.other(message: $message)';
 }
 
 
@@ -304,16 +307,18 @@ _$ServerErrorCopyWith<_ServerError> get copyWith => __$ServerErrorCopyWithImpl<_
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ServerError&&(identical(other.message, message) || other.message == message));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ServerError&&(identical(other.message, message) || other.message == message));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode {
+    return Object.hash(runtimeType,message);
+}
 
 @override
 String toString() {
-  return 'ApiFailure.serverError(message: $message)';
+    return 'ApiFailure.serverError(message: $message)';
 }
 
 
@@ -365,7 +370,7 @@ class _PoorConnection implements ApiFailure {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PoorConnection);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _PoorConnection);
 }
 
 
@@ -374,7 +379,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ApiFailure.poorConnection()';
+    return 'ApiFailure.poorConnection()';
 }
 
 
@@ -397,7 +402,7 @@ class _ServerTimeout implements ApiFailure {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ServerTimeout);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ServerTimeout);
 }
 
 
@@ -406,7 +411,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ApiFailure.serverTimeout()';
+    return 'ApiFailure.serverTimeout()';
 }
 
 
@@ -429,7 +434,7 @@ class _AuthenticationFailed implements ApiFailure {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthenticationFailed);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthenticationFailed);
 }
 
 
@@ -438,7 +443,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ApiFailure.authenticationFailed()';
+    return 'ApiFailure.authenticationFailed()';
 }
 
 
@@ -466,16 +471,18 @@ _$ForbiddenCopyWith<_Forbidden> get copyWith => __$ForbiddenCopyWithImpl<_Forbid
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Forbidden&&(identical(other.message, message) || other.message == message));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Forbidden&&(identical(other.message, message) || other.message == message));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode {
+    return Object.hash(runtimeType,message);
+}
 
 @override
 String toString() {
-  return 'ApiFailure.forbidden(message: $message)';
+    return 'ApiFailure.forbidden(message: $message)';
 }
 
 
@@ -532,16 +539,18 @@ _$NotFoundCopyWith<_NotFound> get copyWith => __$NotFoundCopyWithImpl<_NotFound>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotFound&&(identical(other.message, message) || other.message == message));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotFound&&(identical(other.message, message) || other.message == message));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode {
+    return Object.hash(runtimeType,message);
+}
 
 @override
 String toString() {
-  return 'ApiFailure.notFound(message: $message)';
+    return 'ApiFailure.notFound(message: $message)';
 }
 
 
@@ -598,16 +607,18 @@ _$ValidationErrorCopyWith<_ValidationError> get copyWith => __$ValidationErrorCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidationError&&(identical(other.message, message) || other.message == message));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidationError&&(identical(other.message, message) || other.message == message));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode {
+    return Object.hash(runtimeType,message);
+}
 
 @override
 String toString() {
-  return 'ApiFailure.validationError(message: $message)';
+    return 'ApiFailure.validationError(message: $message)';
 }
 
 
@@ -659,7 +670,7 @@ class _TooManyRequests implements ApiFailure {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TooManyRequests);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TooManyRequests);
 }
 
 
@@ -668,7 +679,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ApiFailure.tooManyRequests()';
+    return 'ApiFailure.tooManyRequests()';
 }
 
 
