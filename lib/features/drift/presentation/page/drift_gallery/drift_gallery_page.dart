@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skydrift/core/constants/strings_constant.dart';
 import 'package:skydrift/core/utils/screen_utils.dart';
 import 'package:skydrift/features/drift/application/drift_bloc.dart';
-import 'package:skydrift/features/drift/presentation/cloud_type_copy.dart';
 import 'package:skydrift/flavor_config/flavor_config.dart';
 import 'package:skydrift/routes/typed_routes.dart';
 import 'package:skydrift/theme/app_text_style.dart';
@@ -73,7 +72,7 @@ class DriftGalleryPage extends StatelessWidget {
                     drift.imageUrl,
                   ),
                   title: drift.imaginedShape,
-                  cloudType: CloudTypeCopy.englishNameOf(drift.cloudType),
+                  cloudType: drift.cloudType,
                   onTap: () =>
                       DriftDetailRoute($extra: drift).push<void>(context),
                 );

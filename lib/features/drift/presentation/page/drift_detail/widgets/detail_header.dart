@@ -52,7 +52,7 @@ class _DetailHeader extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0x00000000), Color(0x99000000)],
+                    colors: [BaseColors.black0, BaseColors.black60],
                   ),
                 ),
               ),
@@ -70,7 +70,7 @@ class _DetailHeader extends StatelessWidget {
                       horizontal: 14.w,
                       vertical: 8.h,
                     ),
-                    color: const Color(0x66FFFFFF),
+                    color: BaseColors.white40,
                     child: Text(
                       cloudName,
                       textAlign: TextAlign.center,

@@ -24,10 +24,15 @@ class FlavorConfig {
   late final String baseUrl;
 
   static void initialize({required AppFlavor flavor}) {
+    final resolvedBaseUrl = _baseUrl(flavor);
+    assert(
+      flavor != AppFlavor.prod || resolvedBaseUrl.isNotEmpty,
+      'Set FlavorConfig.prodApiUrl to the deployed API, including /api',
+    );
     _instance = FlavorConfig._()
       ..flavor = flavor
       ..appName = _appName(flavor)
-      ..baseUrl = _baseUrl(flavor);
+      ..baseUrl = resolvedBaseUrl;
   }
 
   static String _appName(AppFlavor flavor) {
@@ -37,9 +42,22 @@ class FlavorConfig {
     };
   }
 
+  /// Deployed API, including `/api`. Paste the real host here.
+  static const String prodApiUrl = '';
+
+  /// Optional full override, including `/api`.
+  /// `flutter run --dart-define=API_BASE_URL=https://host/api`
+  static const String _apiBaseUrlOverride = String.fromEnvironment(
+    'API_BASE_URL',
+  );
+
   static String _baseUrl(AppFlavor flavor) {
+    if (_apiBaseUrlOverride.isNotEmpty) {
+      return _apiBaseUrlOverride;
+    }
     return switch (flavor) {
-      AppFlavor.dev || AppFlavor.prod => _localApiUrl(),
+      AppFlavor.dev => _localApiUrl(),
+      AppFlavor.prod => prodApiUrl,
     };
   }
 
