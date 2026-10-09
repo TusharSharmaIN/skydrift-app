@@ -4,59 +4,35 @@ permissions:
   contents: write
 
 on:
+  workflow_dispatch: # Allows 1-click manual test runs from GitHub
   push:
     tags:
       - "v*"
 
 jobs:
   build:
-    name: Build & Release APK
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin"
-          java-version: "17"
-          cache: "gradle"
-
-      - name: Set up Flutter
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-          cache: true
 
-      - name: Verify Flutter environment
-        run: flutter doctor -v
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Run code generation
-        run: dart run build_runner build --delete-conflicting-outputs
-
-      - name: Build Production APK
-        run: flutter build apk --release --flavor prod -t lib/main_prod.dart
-
-      - name: Rename APK for release
-        run: |
-          mkdir -p release-output
-          cp build/app/outputs/flutter-apk/app-prod-release.apk release-output/skydrift-${{ github.ref_name }}.apk
+      - run: flutter pub get
+      - run: dart run build_runner build --delete-conflicting-outputs
+      - run: flutter build apk --release --flavor prod -t lib/main_prod.dart
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: skydrift-${{ github.ref_name }}
-          path: release-output/skydrift-${{ github.ref_name }}.apk
+          name: skydrift-release.apk
+          path: build/app/outputs/flutter-apk/app-prod-release.apk
 
-      - name: Publish GitHub Release
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
-          artifacts: release-output/skydrift-${{ github.ref_name }}.apk
+          artifacts: build/app/outputs/flutter-apk/app-prod-release.apk
           token: ${{ secrets.GITHUB_TOKEN }}
-          generateReleaseNotes: true
-          makeLatest: true
